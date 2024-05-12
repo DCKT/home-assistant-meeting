@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meeting options</title>
+  </head>
+  <body>
+    <script defer src="options.js" type="module"></script>
+    <form
+      id="optionsForm"
+      style="display: flex; flex-direction: column; gap: 4px"
+    >
+      <div>
+        <label for="homeAssistantApiUrl"> Home Assistant API URL </label>
+        <input
+          type="text"
+          name="homeAssistantApiUrl"
+          id="homeAssistantApiUrl"
+          required
+        />
+      </div>
+      <div>
+        <label for="homeAssistantApiToken"> Home Assistant API token </label>
+        <input
+          type="text"
+          name="homeAssistantApiToken"
+          id="homeAssistantApiToken"
+          required
+        />
+      </div>
+      <div>
+        <label for="homeAssistantEntity"> Home Assistant entity ID </label>
+        <input
+          type="text"
+          name="homeAssistantEntity"
+          id="homeAssistantEntity"
+          required
+        />
+      </div>
+      <div>
+        <button>Save</button>
+      </div>
+    </form>
+  </body>
+</html>
