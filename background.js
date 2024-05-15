@@ -35,21 +35,20 @@
     const meetTab = await chrome.tabs.query({
       url: "https://meet.google.com/*",
     });
-    const zoomTab = await chrome.tabs.query({ url: "https://zoom.us/*" });
 
-    return meetTab.length || zoomTab.length;
+    return meetTab.length;
   };
 
   const onTabCreation = async (tab) => {
-    const hasActiveTab = await hasActiveTab();
+    const isActive = await hasActiveTab();
 
-    if (hasActiveTab) {
+    if (isActive) {
       await updateEntity("on");
     }
   };
   const onTabDeletion = async (tab) => {
-    const hasActiveTab = await hasActiveTab();
-    if (!hasActiveTab) {
+    const isActive = await hasActiveTab();
+    if (!isActive) {
       await updateEntity("off");
     }
   };
